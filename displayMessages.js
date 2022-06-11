@@ -1,16 +1,32 @@
 import messages from "./messages.json" assert { type: "json" };
 
 let counter = 0;
-function myLoop(jsonArray) {
+let countDown = messages.messages[counter].duration;
+document.getElementById("time").innerHTML = `Duration: ${countDown}`;
+document.getElementById(
+  "message"
+).innerHTML = `Text: ${messages.messages[counter].text}`;
+
+function countDownFun(jsonArray) {
   setTimeout(function () {
-    document.getElementById("message").innerHTML = jsonArray.messages[counter].text;
-    counter++;
-    if (counter < jsonArray.messages.length) {
-      myLoop(messages);
-    } else if (counter == jsonArray.messages.length) {
-      counter = 0;
-      myLoop(messages);
+    if (countDown == 0) {
+      counter++;
+      if (counter == jsonArray.messages.length) {
+        counter = 0;
+        countDown = messages.messages[counter].duration;
+      }
+      countDown = messages.messages[counter].duration;
+      document.getElementById(
+        "message"
+      ).innerHTML = `Text: ${jsonArray.messages[counter].text}`;
+      document.getElementById("time").innerHTML = `Duration: ${countDown}`;
+      countDownFun(messages);
+    } else {
+      countDown--;
+      document.getElementById("time").innerHTML = `Duration: ${countDown}`;
+      countDownFun(messages);
     }
-  }, jsonArray.messages[counter].duration * 1000);
+  }, 1000);
 }
-myLoop(messages);
+
+countDownFun(messages);

@@ -13,9 +13,9 @@ function countDownFun(jsonArray) {
       counter++;
       if (counter == jsonArray.messages.length) {
         counter = 0;
-        countDown = messages.messages[counter].duration;
+        countDown = jsonArray.messages[counter].duration;
       }
-      countDown = messages.messages[counter].duration;
+      countDown = jsonArray.messages[counter].duration;
       document.getElementById(
         "message"
       ).innerHTML = `Text: ${jsonArray.messages[counter].text}`;

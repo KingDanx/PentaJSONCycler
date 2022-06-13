@@ -7,7 +7,7 @@ document.getElementById(
   "message"
 ).innerHTML = `Text: ${messages.messages[counter].text}`;
 
-function countDownFun(jsonArray) {
+function cycleMessages(jsonArray) {
   setTimeout(function () {
     if (countDown == 0) {
       counter++;
@@ -20,13 +20,13 @@ function countDownFun(jsonArray) {
         "message"
       ).innerHTML = `Text: ${jsonArray.messages[counter].text}`;
       document.getElementById("time").innerHTML = `Duration: ${countDown}`;
-      countDownFun(messages);
+      cycleMessages(messages);
     } else {
       countDown--;
       document.getElementById("time").innerHTML = `Duration: ${countDown}`;
-      countDownFun(messages);
+      cycleMessages(messages);
     }
   }, 1000);
 }
 
-countDownFun(messages);
+cycleMessages(messages);

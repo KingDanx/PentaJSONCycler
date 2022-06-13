@@ -6,7 +6,7 @@ Install Live Server in VS Code </br>
 
 
 Press F1 and type <b>live</b> then click <b>Live Server: Open with Live Server</b>
-![image](https://user-images.githubusercontent.com/88867180/172630407-0a7fb658-a151-48bb-9b1f-4d0191186da3.png)
+![image](https://user-images.githubusercontent.com/88867180/173416052-4b9de3c4-d960-4cd8-97d9-c09ab6e48e5f.png)
 
 Your browser should open the HTML and start cycling through the JSON array.  Change the duration time or text in the messages.json to display different results
 ![image](https://user-images.githubusercontent.com/88867180/172631343-04d020bc-d62d-4c9e-8342-d79c44519bae.png)
